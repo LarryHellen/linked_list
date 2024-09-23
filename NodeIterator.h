@@ -6,6 +6,7 @@
 #define NODEITERATOR_H
 
 #include "Node.h"
+#include <iterator>
 
 //all operators:
 //increment postfix and prefix
@@ -15,7 +16,7 @@
 
 
 template <typename T>
-class NodeIterator
+class NodeIterator : public std::iterator<std::bidirectional_iterator_tag, T>
 {
 private:
     Node<T>* current;

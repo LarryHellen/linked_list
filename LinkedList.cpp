@@ -329,4 +329,28 @@ std::ostream &operator<<(std::ostream &out, const LinkedList<T> &list)
     return out;
 }
 
+template<typename T>
+typename LinkedList<T>::iterator LinkedList<T>::begin()
+{
+    return LinkedList<T>::iterator(head);
+}
+
+template<typename T>
+typename LinkedList<T>::iterator LinkedList<T>::end()
+{
+    return LinkedList<T>::iterator(nullptr);
+}
+
+template<typename T>
+typename LinkedList<T>::reverse_iterator LinkedList<T>::rbegin()
+{
+    return LinkedList<T>::iterator(tail);
+}
+
+template<typename T>
+typename LinkedList<T>::reverse_iterator LinkedList<T>::rend()
+{
+    return LinkedList<T>::iterator(nullptr);
+}
+
 #endif

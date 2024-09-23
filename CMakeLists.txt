@@ -6,5 +6,9 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(linked_list main.cpp
                 Node.h
                 LinkedList.h
-                LinkedList.cpp)
+                LinkedList.cpp
+                NodeIterator.h
+                NodeIterator.cpp
+        ReverseIterator.cpp
+        ReverseIterator.h)
 

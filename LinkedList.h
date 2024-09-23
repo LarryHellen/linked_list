@@ -3,6 +3,9 @@
 #include "Node.h"
 #include <initializer_list>
 #include <iostream>
+#include "NodeIterator.h"
+#include "ReverseIterator.h"
+
 template <typename T>
 class LinkedList
 {
@@ -26,6 +29,12 @@ private:
     void copy_list(Node<T> &list);
     void clear_list();
 public:
+    typedef NodeIterator<T> iterator;
+    typedef ReverseIterator<T> reverse_iterator;
+    //typedef ConstIterator<T> const_iterator;
+
+
+
     LinkedList();
     LinkedList(const std::initializer_list<T>& list);
 
@@ -61,6 +70,13 @@ public:
     void remove(const T& data); ///remove the first instance of data
     void insert_before(const T& targetData, const T& newData);
     void insert_after(const T& targetData, const T& newData);
+
+    iterator begin();
+    iterator end();
+    reverse_iterator rbegin();
+    reverse_iterator rend();
+    //const_iterator cbegin();
+    //const_iterator cend();
 };
 
 #include "LinkedList.cpp"
