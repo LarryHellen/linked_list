@@ -9,6 +9,7 @@ class LinkedList
 private:
     Node<T>* head = nullptr, *tail = nullptr;
     int _size = 0;
+
     void push_front(Node<T>* node);
     void push_back(Node<T>* node);
 
@@ -17,10 +18,13 @@ private:
 
     void insert_before(Node<T>* target, Node<T>* data);
     Node<T>* search(const T& target);
-    Node<T>* createNode(const T& data);
 
     Node<T>* create_node(const T& data);
-    void add_first_node(const T& data);
+    //void add_first_node(const T& data);
+    void add_first_node(Node<T>* node);
+
+    void copy_list(Node<T> &list);
+    void clear_list();
 public:
     LinkedList();
     LinkedList(const std::initializer_list<T>& list);
@@ -34,6 +38,7 @@ public:
     template<typename U>
     friend std::ostream& operator<<(std::ostream& out,
             const LinkedList<U>& list);
+
     template <typename U>
     friend LinkedList<U> operator+(const LinkedList<U>& list1,
                                    const LinkedList<U>& list2);
@@ -53,10 +58,10 @@ public:
 
     bool contains(const T& data);
 
-    void remove(const T& data); ///remove the first instance of ddta
+    void remove(const T& data); ///remove the first instance of data
     void insert_before(const T& targetData, const T& newData);
     void insert_after(const T& targetData, const T& newData);
 };
 
 #include "LinkedList.cpp"
-#endif //CS8_FALL24_LINKED_LIST_LINKEDLIST_H
+#endif
