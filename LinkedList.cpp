@@ -10,11 +10,9 @@ LinkedList<T>::LinkedList()
 template<typename T>
 LinkedList<T>::LinkedList(const std::initializer_list<T> &list)
 {
-    T* walker = list.begin();
-    while(walker != nullptr)
+    for (const T& element : list)
     {
-        push_back({*walker});
-        ++walker;
+        this->push_back(element);
     }
 }
 

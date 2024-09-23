@@ -7,3 +7,4 @@ add_executable(linked_list main.cpp
                 Node.h
                 LinkedList.h
                 LinkedList.cpp)
+
