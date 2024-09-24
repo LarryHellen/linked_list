@@ -2,12 +2,21 @@
 #include "LinkedList.h"
 int main()
 {
-    LinkedList<int> l;
+    LinkedList<int> l = {1, 2, 3};
 
-    LinkedList<int>::iterator iter = l.begin();
+    LinkedList<int> l2 = {4, 5, 6};
 
-    for(auto& i : l)
-        std::cout << i;
+    std::cout << l << std::endl;
+    std::cout << l2 << std::endl;
+
+    l += l2;
+
+    std::cout << l << std::endl;
+    std::cout << l2 << std::endl;
+
+
+
+
 
     return 0;
 }

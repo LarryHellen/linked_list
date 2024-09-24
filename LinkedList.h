@@ -5,6 +5,7 @@
 #include <iostream>
 #include "NodeIterator.h"
 #include "ReverseIterator.h"
+#include "ConstIterator.h"
 
 template <typename T>
 class LinkedList
@@ -26,12 +27,12 @@ private:
     //void add_first_node(const T& data);
     void add_first_node(Node<T>* node);
 
-    void copy_list(Node<T> &list);
+    void copy_list(const LinkedList<T> &list);
     void clear_list();
 public:
     typedef NodeIterator<T> iterator;
     typedef ReverseIterator<T> reverse_iterator;
-    //typedef ConstIterator<T> const_iterator;
+    typedef ConstIterator<T> const_iterator;
 
 
 
@@ -71,12 +72,14 @@ public:
     void insert_before(const T& targetData, const T& newData);
     void insert_after(const T& targetData, const T& newData);
 
+    void operator +=(const LinkedList<T>& list);
+
     iterator begin();
     iterator end();
     reverse_iterator rbegin();
     reverse_iterator rend();
-    //const_iterator cbegin();
-    //const_iterator cend();
+    const_iterator cbegin();
+    const_iterator cend();
 };
 
 #include "LinkedList.cpp"

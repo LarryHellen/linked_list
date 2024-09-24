@@ -29,7 +29,7 @@ LinkedList<T>::~LinkedList()
 }
 
 template<typename T>
-void LinkedList<T>::copy_list(Node<T> &list)
+void LinkedList<T>::copy_list(const LinkedList<T> &list)
 {
     if(list.empty())
         return;
@@ -185,7 +185,7 @@ Node<T> *LinkedList<T>::search(const T &target)
 template<typename T>
 LinkedList<T> &LinkedList<T>::operator=(const LinkedList<T> &list)
 {
-    if(this == list)
+    if(this == &list)
         return *this;
 
     clear_list();
@@ -330,6 +330,12 @@ std::ostream &operator<<(std::ostream &out, const LinkedList<T> &list)
 }
 
 template<typename T>
+void LinkedList<T>::operator+=(const LinkedList<T> &list)
+{
+    *this = *this + list;
+}
+
+template<typename T>
 typename LinkedList<T>::iterator LinkedList<T>::begin()
 {
     return LinkedList<T>::iterator(head);
@@ -351,6 +357,18 @@ template<typename T>
 typename LinkedList<T>::reverse_iterator LinkedList<T>::rend()
 {
     return LinkedList<T>::iterator(nullptr);
+}
+
+template<typename T>
+typename LinkedList<T>::const_iterator LinkedList<T>::cbegin()
+{
+    return LinkedList<T>::const_iterator(head);
+}
+
+template<typename T>
+typename LinkedList<T>::const_iterator LinkedList<T>::cend()
+{
+    return LinkedList<T>::const_iterator(nullptr);
 }
 
 #endif

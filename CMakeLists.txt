@@ -10,5 +10,7 @@ add_executable(linked_list main.cpp
                 NodeIterator.h
                 NodeIterator.cpp
         ReverseIterator.cpp
-        ReverseIterator.h)
+        ReverseIterator.h
+        ConstIterator.cpp
+        ConstIterator.h)
 

@@ -10,6 +10,7 @@
 template <typename T>
 class ReverseIterator : public NodeIterator<T>
 {
+private:
     using NodeIterator<T>::current;
 public:
     NodeIterator<T>& operator++(); //prefix ++it;
