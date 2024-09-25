@@ -14,6 +14,13 @@ int main()
     std::cout << l << std::endl;
     std::cout << l2 << std::endl;
 
+    NodeIterator<int> it = l.begin();
+
+    std::cout << *it << std::endl;
+    it += 2;
+    std::cout << *it << std::endl;
+    it--;
+    std::cout << *it << std::endl;
 
 
 

@@ -30,6 +30,8 @@ public:
     NodeIterator<T>& operator--();
     NodeIterator<T> operator--(int);
 
+
+
     T& operator*();
 
     template <typename U>
@@ -37,6 +39,15 @@ public:
 
     template <typename U>
     friend bool operator!=(const NodeIterator<U>& iterator1, const NodeIterator<U>& iterator2);
+
+    template <typename U>
+    friend NodeIterator<U> operator+(const NodeIterator<U>& iterator, int n);
+
+    template <typename U>
+    friend NodeIterator<U> operator-(const NodeIterator<U>& iterator, int n);
+
+    void operator +=(int n);
+    void operator -=(int n);
 };
 
 

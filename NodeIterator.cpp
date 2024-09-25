@@ -58,4 +58,48 @@ bool operator!=(const NodeIterator<U>& iterator1, const NodeIterator<U>& iterato
     return iterator1.current != iterator2.current;;
 }
 
+template<typename U>
+NodeIterator<U> operator+(const NodeIterator<U> &iterator, int n)
+{
+    NodeIterator<U> ret(iterator);
+
+    while(n != 0 && ret.current != nullptr)
+    {
+        ret++;
+        n--;
+    }
+
+    return ret;
+}
+
+template<typename U>
+NodeIterator<U> operator-(const NodeIterator<U> &iterator, int n)
+{
+    NodeIterator<U> ret(iterator);
+
+    while(n != 0 && ret.current != nullptr)
+    {
+        ret++;
+        n--;
+    }
+
+    return ret;
+}
+
+
+//stack: 17
+
+
+template<typename T>
+void NodeIterator<T>::operator+=(int n)
+{
+    *this = *this + n;
+}
+
+template<typename T>
+void NodeIterator<T>::operator-=(int n)
+{
+    *this = *this - n;
+}
+
 #endif
